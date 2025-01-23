@@ -1,4 +1,7 @@
+'use client';
 import React from 'react';
+import Image from 'next/image';
+import logo from '../../public/logo_grafite_branco.png';
 import CountdownTimer from '../components/CountdownTimer';
 
 const HomePage = () => {
@@ -10,7 +13,7 @@ const HomePage = () => {
 
 	return (
 		<div className='flex flex-col grow text-center justify-center items-center h-5/6'>
-			<h1 className='text-4xl text-red-500'>CLANDESTINO.CC</h1>
+			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} />
 			<p>PEDAL COLETIVO</p>
 			<CountdownTimer targetDate={nextTuesday} />
 		</div>
