@@ -1,3 +1,5 @@
+'use client';
+import { HeroUIProvider } from '@heroui/system';
 import React from 'react';
 
 interface ContainerProps {
@@ -5,7 +7,11 @@ interface ContainerProps {
 }
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
-	return <div className='box-border ml-auto mr-auto h-dvh'>{children}</div>;
+	return (
+		<HeroUIProvider>
+			<div className='box-border ml-auto mr-auto h-dvh'>{children}</div>
+		</HeroUIProvider>
+	);
 };
 
 export default Container;
