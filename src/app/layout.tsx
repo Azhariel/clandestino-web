@@ -1,7 +1,9 @@
 'use client';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { Button, HeroUIProvider, Image, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react';
+import { Button, HeroUIProvider, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/react';
+import Image from 'next/image';
+import logo from '../../public/logo.jpg';
 import Container from '@/components/Container';
 
 const geistSans = Geist({
@@ -27,7 +29,7 @@ export default function RootLayout({
 						<Container>
 							<Navbar>
 								<NavbarBrand>
-									<Image src='https://placehold.co/40/000000/FFFFFF/png' alt='CLANDESTINO.CC' width={40} height={40} />
+									<Image src={logo} alt='CLANDESTINO.CC' width={50} height={50} />
 									<p className='font-bold text-inherit ml-2'>Clandestino.cc</p>
 								</NavbarBrand>
 								<NavbarContent className='hidden sm:flex gap-4' justify='end'>
