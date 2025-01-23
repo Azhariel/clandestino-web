@@ -15,5 +15,5 @@ export default {
 		},
 	},
 	darkMode: 'class',
-	plugins: [heroui()],
+	plugins: [heroui({ addCommonColors: true })],
 } satisfies Config;
