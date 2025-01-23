@@ -32,7 +32,9 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 				/>
 				<p>
 					{days > 0 && <span>{days} dias e </span>}
-					{hours}:{minutes}:{seconds} até o próximo pedal!
+					{days === 0 && !completed && <span>HOJE em </span>}
+					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')} até o
+					próximo pedal!
 				</p>
 				{days === 0 && hours <= 20 && <p>{messages.soon}</p>}
 			</div>
