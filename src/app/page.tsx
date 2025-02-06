@@ -13,8 +13,8 @@ const HomePage = () => {
 
 	return (
 		<div className='flex flex-col grow text-center justify-center items-center h-5/6'>
-			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} />
 			<p>PEDAL COLETIVO</p>
+			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} />
 			<CountdownTimer targetDate={nextTuesday} />
 		</div>
 	);

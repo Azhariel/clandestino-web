@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clandestino.cc
 
-## Getting Started
+Projeto para o site do Coletivo Clandestino.cc que visa anunciar datas de pedal, reuniões, divulgar outros projetos e prover um histórico de fotos e cartazes.
 
-First, run the development server:
+## Instalação
+
+No terminal:
 
 ```bash
+git clone https://github.com/Azhariel/clandestino-web.git
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no navegador para acessar o site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Features em planejamento:
 
-## Learn More
+- [ ] Integração com Supabase para cadastro de eventos e mensagens personalizadas de aviso sobre a proximidade dos mesmos
+- [ ] Criação de um dashboard para administração
+- [ ] Criação de uma página para agregar os álbuns de fotos e cartazes de cada pedal / reunião
 
-To learn more about Next.js, take a look at the following resources:
+## Colaboração
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fique à vontade para contribuir da forma que puder: [issues](https://github.com/Azhariel/clandestino-web/issues), PRs, divulgação e doações são todas formas bem vindas!
