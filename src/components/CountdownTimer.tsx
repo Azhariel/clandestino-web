@@ -29,14 +29,18 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 					color='danger'
 					size='lg'
 					strokeWidth={5}
+					aria-valuenow={(days * 24 + hours) * -1}
+					aria-valuemin={7 * 24 * -1}
+					aria-valuemax={0}
+					aria-valuetext={`${(days * 24 + hours) * -1}%`}
+					role='progressbar'
+					aria-label='countdown'
 				/>
 				<p>
 					{days > 0 && <span>{days} dias e </span>}
-					{days === 0 && !completed && <span>HOJE em </span>}
 					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')} até o
-					próximo pedal!
+					próximo evento!
 				</p>
-				{days === 0 && hours <= 20 && <p>{messages.soon}</p>}
 			</div>
 		);
 	};
