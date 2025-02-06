@@ -20,7 +20,7 @@ Abra [http://localhost:3000](http://localhost:3000) no navegador para acessar o 
 
 Features em planejamento:
 
-- [ ] Integração com Supabase para cadastro de eventos e mensagens personalizadas de aviso sobre a proximidade dos mesmos
+- [x] Integração com Supabase para cadastro de eventos e mensagens personalizadas de aviso sobre a proximidade dos mesmos
 - [ ] Criação de um dashboard para administração
 - [ ] Criação de uma página para agregar os álbuns de fotos e cartazes de cada pedal / reunião
 
