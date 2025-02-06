@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { Event } from '@/types/event';
 import CountdownTimer from '@/components/CountdownTimer';
-import { Button } from '@heroui/react';
+// import { Button } from '@heroui/react';
 import logo from '@/public/logo_grafite_branco.png';
 
 const HomePage = () => {
@@ -43,8 +43,8 @@ const HomePage = () => {
 			) : (
 				<p>Nenhum evento programado.</p>
 			)}
-			<Button onPress={() => alert('Join the ride!')}>Join Now</Button>
-			<Button onPress={fetchEvents}>Refetch events</Button>
+			{/* <Button onPress={() => alert('Join the ride!')}>Join Now</Button>
+			<Button onPress={fetchEvents}>Refetch events</Button> */}
 		</div>
 	);
 };
