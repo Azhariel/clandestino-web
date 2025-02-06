@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { Event } from '@/types/event';
 import CountdownTimer from '@/components/CountdownTimer';
-// import { Button } from '@heroui/react';
 import logo from '@/public/logo_grafite_branco.png';
+import { calculateNextOccurrence } from '@/utils/calculateNextOccurence';
 
 const HomePage = () => {
 	const [events, setEvents] = useState<Event[]>([]);
@@ -25,7 +25,7 @@ const HomePage = () => {
 	const nextEvent = events
 		.map((event) => ({
 			...event,
-			datetime: new Date(event.datetime), // Convert Supabase datetime string to Date object
+			datetime: calculateNextOccurrence(event),
 		}))
 		.find((event) => event.datetime > now);
 
@@ -36,15 +36,14 @@ const HomePage = () => {
 			{nextEvent ? (
 				<>
 					<CountdownTimer targetDate={nextEvent.datetime} />
-					<p>
-						Próximo evento: {nextEvent.name} em {nextEvent.datetime.toLocaleString()}
+					<p className='text-sm'>
+						Próximo evento: {nextEvent.name} em{' '}
+						{nextEvent.datetime.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
 					</p>
 				</>
 			) : (
 				<p>Nenhum evento programado.</p>
 			)}
-			{/* <Button onPress={() => alert('Join the ride!')}>Join Now</Button>
-			<Button onPress={fetchEvents}>Refetch events</Button> */}
 		</div>
 	);
 };
