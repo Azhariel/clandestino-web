@@ -1,6 +1,7 @@
 export type Event = {
 	id: string; // UUID
-	name: string; // Text
+	name: string; // Event title
+	description: string; // Event description
 	datetime: string; // ISO 8601 string representation of timestamp with time zone
 	repeats: boolean; // Boolean
 	frequency?: string; // weekly | monthly
