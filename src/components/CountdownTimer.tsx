@@ -38,8 +38,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 				/>
 				<p>
 					{days > 0 && <span>{days} dias e </span>}
-					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')} até o
-					próximo evento!
+					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
 				</p>
 			</div>
 		);
