@@ -1,10 +1,10 @@
 import { Event } from '@/types/event';
 
-export const calculateNextOccurrence = (event: Event) => {
+export const calculateNextOccurrence = (event: Event): string => {
 	const eventDate = new Date(event.datetime);
 	const now = new Date();
 
-	if (!event.repeats) return eventDate;
+	if (!event.repeats) return String(eventDate);
 
 	if (event.frequency === 'weekly') {
 		while (eventDate <= now) {
@@ -16,5 +16,5 @@ export const calculateNextOccurrence = (event: Event) => {
 		}
 	}
 
-	return eventDate;
+	return String(eventDate);
 };
