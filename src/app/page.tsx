@@ -31,7 +31,7 @@ const HomePage = () => {
 
 	return (
 		<div className='flex flex-col grow text-center justify-center items-center h-5/6 px-4'>
-			<h1>PEDAL COLETIVO</h1>
+			<h1 className='text-5xl font-heading'>PEDAL COLETIVO</h1>
 			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} className='' />
 			{nextEvent ? <EventCard event={nextEvent} /> : <p>Nenhum evento programado.</p>}
 		</div>

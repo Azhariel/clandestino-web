@@ -24,7 +24,7 @@ const ClandestineNavbar: React.FC = () => {
 			<Navbar>
 				<NavbarBrand>
 					<Image src={logo} alt='CLANDESTINO.CC' width={50} height={50} />
-					<p className='font-bold text-inherit ml-2'>Clandestino.cc</p>
+					<h1 className='font-heading text-xl uppercase ml-2'>Clandestino.cc</h1>
 				</NavbarBrand>
 				<NavbarContent className='hidden sm:flex gap-4' justify='end'>
 					<NavbarItem>
