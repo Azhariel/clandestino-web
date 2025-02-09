@@ -3,11 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { Event } from '@/types/event';
-import CountdownTimer from '@/components/CountdownTimer';
 import logo from '@/public/logo_grafite_branco.png';
 import { calculateNextOccurrence } from '@/utils/calculateNextOccurence';
-import { Button, Card, CardBody, CardFooter, CardHeader } from '@heroui/react';
-import { generateGoogleCalendarLink } from '@/utils/generateGoogleCalendarLink';
+import { EventCard } from '@/components/EventCard';
 
 const HomePage = () => {
 	const [events, setEvents] = useState<Event[]>([]);
@@ -35,41 +33,7 @@ const HomePage = () => {
 		<div className='flex flex-col grow text-center justify-center items-center h-5/6'>
 			<h1>PEDAL COLETIVO</h1>
 			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} />
-			{nextEvent ? (
-				<Card className='p-2 mt-6'>
-					<CardHeader className='justify-center text-center text-xl'>
-						<h2>{nextEvent.name}</h2>
-					</CardHeader>
-					<CardBody className='mx-2'>
-						<CountdownTimer targetDate={new Date(nextEvent.datetime)} />
-						<p>
-							🗓️ <strong>Quando: </strong>
-							{new Date(nextEvent.datetime).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
-						</p>
-						{nextEvent.location && (
-							<p>
-								📍 <strong>Onde:</strong> {nextEvent.location}
-							</p>
-						)}
-						{nextEvent.url && (
-							<p>
-								🌐 <strong>Link:</strong>{' '}
-								<a href={nextEvent.url} target='_blank' rel='noopener noreferrer'>
-									Participe Online
-								</a>
-							</p>
-						)}
-					</CardBody>
-					<CardFooter className='flex justify-around gap-4'>
-						<Button onPress={() => window.open(generateGoogleCalendarLink(nextEvent), '_blank')}>
-							Adicione ao Calendário
-						</Button>
-						{nextEvent.url && <Button onPress={() => window.open(nextEvent.url, '_blank')}>Participe Online</Button>}
-					</CardFooter>
-				</Card>
-			) : (
-				<p>Nenhum evento programado.</p>
-			)}
+			{nextEvent ? <EventCard event={nextEvent} /> : <p>Nenhum evento programado.</p>}
 		</div>
 	);
 };
