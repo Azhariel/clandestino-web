@@ -19,8 +19,8 @@ type CountdownTimerRendererProps = {
 
 const CountdownTimer = ({ targetDate, className = '' }: CountdownTimerProps) => {
 	const renderer = ({ days, hours, minutes, seconds, completed }: CountdownTimerRendererProps) => {
-		if (completed && hours <= 2) return <span>{messages.ongoing}</span>;
-		if (completed) return <span>{messages.completed}</span>;
+		if (completed && hours <= 2) return <p className='font-bold text-danger-500'>{messages.ongoing}</p>;
+		if (completed) return <p className='font-bold'>{messages.completed}</p>;
 		return (
 			<div className={`flex flex-col text-center justify-center items-center ${className}`}>
 				<CircularProgress
