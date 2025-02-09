@@ -11,6 +11,7 @@ import {
 	NavbarBrand,
 	NavbarContent,
 	NavbarItem,
+	Tooltip,
 	useDisclosure,
 } from '@heroui/react';
 import Image from 'next/image';
@@ -28,9 +29,11 @@ const ClandestineNavbar: React.FC = () => {
 				</NavbarBrand>
 				<NavbarContent className='hidden sm:flex gap-4' justify='end'>
 					<NavbarItem>
-						<Button as={Link} href='#' className='bg-gradient-to-tr from-red-500 to-purple-500'>
-							Manifesto
-						</Button>
+						<Tooltip content='Em breve' placement='bottom' className='dark p-3'>
+							<Button as={Link} href='#' className='bg-gradient-to-tr from-red-500 to-purple-500'>
+								Manifesto
+							</Button>
+						</Tooltip>
 					</NavbarItem>
 				</NavbarContent>
 				<div className='sm:hidden flex items-center'>
