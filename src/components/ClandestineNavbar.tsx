@@ -29,6 +29,17 @@ const ClandestineNavbar: React.FC = () => {
 				</NavbarBrand>
 				<NavbarContent className='hidden sm:flex gap-4' justify='end'>
 					<NavbarItem>
+						<Button
+							content='WhatsApp'
+							as={Link}
+							href='https://chat.whatsapp.com/Dwlwv2suYdQKXfgWeAoXTL'
+							target='_blank'
+							className='bg-gradient-to-tr from-green-500 to-green-700'
+						>
+							WhatsApp
+						</Button>
+					</NavbarItem>
+					<NavbarItem>
 						<Tooltip content='Em breve' placement='bottom' className='dark p-3'>
 							<Button as={Link} href='#' className='bg-gradient-to-tr from-red-500 to-purple-500'>
 								Manifesto
@@ -48,6 +59,15 @@ const ClandestineNavbar: React.FC = () => {
 							<DrawerBody>
 								<Button as={Link} href='#' className='bg-gradient-to-tr from-red-500 to-purple-500'>
 									Manifesto
+								</Button>
+								<Button
+									content='WhatsApp'
+									as={Link}
+									href='https://chat.whatsapp.com/Dwlwv2suYdQKXfgWeAoXTL'
+									target='_blank'
+									className='bg-gradient-to-tr from-green-500 to-green-700'
+								>
+									WhatsApp
 								</Button>
 							</DrawerBody>
 							<DrawerFooter>
