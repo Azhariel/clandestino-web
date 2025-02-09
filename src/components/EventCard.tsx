@@ -1,5 +1,5 @@
 import { generateGoogleCalendarLink } from '@/utils/generateGoogleCalendarLink';
-import { Card, CardHeader, CardBody, CardFooter, Button } from '@heroui/react';
+import { Card, CardHeader, CardBody, CardFooter, Button, Divider } from '@heroui/react';
 import CountdownTimer from './CountdownTimer';
 import { Event } from '@/types/event';
 
@@ -9,32 +9,34 @@ type EventCardProps = {
 
 export const EventCard = ({ event }: EventCardProps) => {
 	return (
-		<Card className='p-2 mt-6'>
-			<CardHeader className='justify-center text-center text-xl'>
-				<h2>{event.name}</h2>
+		<Card className='p-2 mt-12'>
+			<CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
+				<h2 className='uppercase font-bold'>{event.name}</h2>
+				<small className='text-default-500'>{event.description}</small>
 			</CardHeader>
-			<CardBody className='mx-2'>
-				<CountdownTimer targetDate={new Date(event.datetime)} />
-				<p>
-					🗓️ <strong>Quando: </strong>
-					{new Date(event.datetime).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
-				</p>
+			<Divider className='mt-2' />
+			<CardBody>
+				<h3 className='font-bold text-tiny uppercase '>🗓️ Quando?</h3>
+				{new Date(event.datetime).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}
 				{event.location && (
-					<p>
-						📍 <strong>Onde:</strong> {event.location}
-					</p>
+					<>
+						<h3 className='font-bold text-tiny uppercase'>📍 Onde?</h3>
+						{event.location}
+					</>
 				)}
 				{event.url && (
-					<p>
-						🌐 <strong>Link:</strong>{' '}
-						<a href={event.url} target='_blank' rel='noopener noreferrer'>
-							Participe Online
+					<>
+						<h3 className='font-bold text-tiny uppercase'>🌐 Link:</h3>
+						<a href={event?.url} target='_blank' rel='noopener noreferrer' className='text-danger-500 underline'>
+							Participe online
 						</a>
-					</p>
+					</>
 				)}
+				<CountdownTimer targetDate={new Date(event.datetime)} className='mt-2' />
 			</CardBody>
-			<CardFooter className='flex justify-around gap-4'>
-				<Button onPress={() => window.open(generateGoogleCalendarLink(event), '_blank')}>Adicione ao Calendário</Button>
+			<Divider />
+			<CardFooter className='flex flex-col gap-4'>
+				<Button onPress={() => window.open(generateGoogleCalendarLink(event), '_blank')}>Marcar no Calendário</Button>
 				{event.url && <Button onPress={() => window.open(event.url, '_blank')}>Participe Online</Button>}
 			</CardFooter>
 		</Card>

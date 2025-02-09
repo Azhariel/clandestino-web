@@ -30,9 +30,9 @@ const HomePage = () => {
 		.find((event) => new Date(event.datetime) > now);
 
 	return (
-		<div className='flex flex-col grow text-center justify-center items-center h-5/6'>
+		<div className='flex flex-col grow text-center justify-center items-center h-5/6 px-4'>
 			<h1>PEDAL COLETIVO</h1>
-			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} />
+			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} className='' />
 			{nextEvent ? <EventCard event={nextEvent} /> : <p>Nenhum evento programado.</p>}
 		</div>
 	);
