@@ -6,6 +6,7 @@ import { CircularProgress } from '@heroui/progress';
 
 type CountdownTimerProps = {
 	targetDate: Date;
+	className?: string;
 };
 
 type CountdownTimerRendererProps = {
@@ -16,18 +17,18 @@ type CountdownTimerRendererProps = {
 	completed: boolean;
 };
 
-const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
+const CountdownTimer = ({ targetDate, className = '' }: CountdownTimerProps) => {
 	const renderer = ({ days, hours, minutes, seconds, completed }: CountdownTimerRendererProps) => {
-		if (completed && hours <= 2) return <span>{messages.ongoing}</span>;
-		if (completed) return <span>{messages.completed}</span>;
+		if (completed && hours <= 2) return <p className='font-bold text-danger-500'>{messages.ongoing}</p>;
+		if (completed) return <p className='font-bold'>{messages.completed}</p>;
 		return (
-			<div className='flex flex-col m-4 text-center justify-center items-center gap-4'>
+			<div className={`flex flex-col text-center justify-center items-center ${className}`}>
 				<CircularProgress
 					value={(days * 24 + hours) * -1}
 					maxValue={0}
 					minValue={7 * 24 * -1}
 					color='danger'
-					size='lg'
+					size='md'
 					strokeWidth={5}
 					aria-valuenow={(days * 24 + hours) * -1}
 					aria-valuemin={7 * 24 * -1}
@@ -38,8 +39,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 				/>
 				<p>
 					{days > 0 && <span>{days} dias e </span>}
-					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')} até o
-					próximo evento!
+					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
 				</p>
 			</div>
 		);
