@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { Event } from '@/types/event';
-import CountdownTimer from '@/components/CountdownTimer';
-// import { Button } from '@heroui/react';
 import logo from '@/public/logo_grafite_branco.png';
+import { calculateNextOccurrence } from '@/utils/calculateNextOccurence';
+import { EventCard } from '@/components/EventCard';
 
 const HomePage = () => {
 	const [events, setEvents] = useState<Event[]>([]);
@@ -25,26 +25,15 @@ const HomePage = () => {
 	const nextEvent = events
 		.map((event) => ({
 			...event,
-			datetime: new Date(event.datetime), // Convert Supabase datetime string to Date object
+			datetime: calculateNextOccurrence(event),
 		}))
-		.find((event) => event.datetime > now);
+		.find((event) => new Date(event.datetime) > now);
 
 	return (
-		<div className='flex flex-col grow text-center justify-center items-center h-5/6'>
-			<h1>PEDAL COLETIVO</h1>
-			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} />
-			{nextEvent ? (
-				<>
-					<CountdownTimer targetDate={nextEvent.datetime} />
-					<p>
-						Próximo evento: {nextEvent.name} em {nextEvent.datetime.toLocaleString()}
-					</p>
-				</>
-			) : (
-				<p>Nenhum evento programado.</p>
-			)}
-			{/* <Button onPress={() => alert('Join the ride!')}>Join Now</Button>
-			<Button onPress={fetchEvents}>Refetch events</Button> */}
+		<div className='flex flex-col grow text-center justify-center items-center h-5/6 px-4'>
+			<h1 className='text-5xl font-heading'>PEDAL COLETIVO</h1>
+			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} className='' />
+			{nextEvent ? <EventCard event={nextEvent} /> : <p>Nenhum evento programado.</p>}
 		</div>
 	);
 };

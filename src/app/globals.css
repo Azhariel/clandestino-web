@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
 	--background: #0a0a0a;
-		--foreground: #ededed;
+	--foreground: #ededed;
+}
+
+@theme {
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -18,4 +22,5 @@ body {
 	color: var(--foreground);
 	background: var(--background);
 	font-family: Arial, Helvetica, sans-serif;
+	--font-heading: 'Protest Revolution', sans-serif;
 }
