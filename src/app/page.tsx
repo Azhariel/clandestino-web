@@ -20,21 +20,32 @@ const HomePage = () => {
 		else setEvents(data);
 	};
 
-	// Find the next event
+	// Find all the next events
 	const now = new Date();
-	const nextEvent = events
+	const nextEvents = events
 		.map((event) => ({
 			...event,
 			datetime: calculateNextOccurrence(event),
 		}))
-		.find((event) => new Date(event.datetime) > now);
+		.filter((event) => new Date(event.datetime) > now)
+		.sort((a, b) => new Date(a.datetime).getTime() - new Date(b.datetime).getTime());
 
 	return (
-		<div className='flex flex-col grow text-center justify-center items-center h-5/6 px-4'>
-			<h1 className='text-5xl font-heading'>PEDAL COLETIVO</h1>
-			<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} className='' />
-			{nextEvent ? <EventCard event={nextEvent} /> : <p>Nenhum evento programado.</p>}
-		</div>
+		<>
+			<div className='flex flex-col grow text-center justify-center items-center h-5/6 px-4 mt-12'>
+				<div className=''>
+					<h1 className='text-5xl font-heading'>PEDAL COLETIVO</h1>
+					<Image src={logo} alt='CLANDESTINO.CC' width={600} height={100} className='' />
+				</div>
+				<div className='flex gap-4 flex-wrap justify-center'>
+					{nextEvents.length > 0 ? (
+						nextEvents.map((event) => <EventCard key={event.id} event={event} />)
+					) : (
+						<p>Nenhum evento programado.</p>
+					)}
+				</div>
+			</div>
+		</>
 	);
 };
 

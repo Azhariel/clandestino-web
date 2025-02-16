@@ -9,8 +9,8 @@ type EventCardProps = {
 
 export const EventCard = ({ event }: EventCardProps) => {
 	return (
-		<Card className='p-2 mt-12'>
-			<CardHeader className='pb-0 pt-2 px-4 flex-col items-start'>
+		<Card className='p-2 mt-12 max-w-72'>
+			<CardHeader className='pb-0 pt-2 px-4 flex-col items-start text-left'>
 				<h2 className='uppercase font-bold'>{event.name}</h2>
 				<small className='text-default-500'>{event.description}</small>
 			</CardHeader>
