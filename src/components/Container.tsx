@@ -9,7 +9,7 @@ interface ContainerProps {
 const Container: React.FC<ContainerProps> = ({ children }) => {
 	return (
 		<HeroUIProvider>
-			<div className='box-border ml-auto mr-auto h-dvh'>{children}</div>
+			<div className='ml-auto mr-auto'>{children}</div>
 		</HeroUIProvider>
 	);
 };

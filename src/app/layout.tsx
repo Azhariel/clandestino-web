@@ -25,9 +25,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='pt-BR'>
+		<html lang='pt-BR' className='dark bg-[#0a0a0a]'>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<main className='dark'>
+				<main className='mb-12'>
 					<Container>
 						<ClandestineNavbar />
 						{children}
