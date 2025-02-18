@@ -38,7 +38,11 @@ const CountdownTimer = ({ targetDate, className = '' }: CountdownTimerProps) => 
 					aria-label='countdown'
 				/>
 				<p>
-					{days > 0 && <span>{days} dias e </span>}
+					{days > 0 && (
+						<span>
+							{days} dia{days === 1 ? '' : 's'} e{' '}
+						</span>
+					)}
 					{String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
 				</p>
 			</div>
