@@ -11,7 +11,6 @@ import {
 	NavbarBrand,
 	NavbarContent,
 	NavbarItem,
-	Tooltip,
 	useDisclosure,
 } from '@heroui/react';
 import Image from 'next/image';
@@ -24,8 +23,17 @@ const ClandestineNavbar: React.FC = () => {
 		<>
 			<Navbar>
 				<NavbarBrand>
-					<Image src={logo} alt='CLANDESTINO.CC' width={50} height={50} />
-					<h1 className='font-heading text-xl uppercase ml-2'>Clandestino.cc</h1>
+					<Link href='/' className='text-white'>
+						<Image
+							src={logo}
+							alt='CLANDESTINO.CC'
+							width={50}
+							height={50}
+							// onClick={() => router.push('/')}
+							// className='cursor-pointer'
+						/>
+						<h1 className='hidden sm:flex font-heading text-xl uppercase ml-2'>Clandestino.cc</h1>
+					</Link>
 				</NavbarBrand>
 				<NavbarContent className='hidden sm:flex gap-4' justify='end'>
 					<NavbarItem>
@@ -40,11 +48,9 @@ const ClandestineNavbar: React.FC = () => {
 						</Button>
 					</NavbarItem>
 					<NavbarItem>
-						<Tooltip content='Em breve' placement='bottom' className='dark p-3'>
-							<Button as={Link} href='#' className='bg-gradient-to-tr from-red-500 to-purple-500'>
-								Manifesto
-							</Button>
-						</Tooltip>
+						<Button as={Link} href='/manifesto' className='bg-gradient-to-tr from-red-500 to-purple-500'>
+							Manifesto
+						</Button>
 					</NavbarItem>
 				</NavbarContent>
 				<div className='sm:hidden flex items-center'>
