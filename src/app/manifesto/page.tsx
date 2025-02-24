@@ -16,7 +16,7 @@ export default function ManifestoClandestino() {
 							Nascemos de uma ruptura. De práticas que cercaram a liberdade das ruas com cadeados invisíveis.
 							Dissidência é nossa gênese: recusamos pirâmides, chefes e donos. Somos feitos de cicatrizes que viraram
 							rotas, de noites que se tornaram insurgências. Nossos corpos são territórios de resistência, nossas
-							bicicletas, armas de libertação.{' '}
+							bicicletas, ferramentas de libertação.{' '}
 							<strong className='text-neon-green'>Nossa existência já é um ato político:</strong> ocupar as ruas não
 							para passar, mas para permanecer.
 						</p>
@@ -45,7 +45,7 @@ export default function ManifestoClandestino() {
 					</section>
 
 					<section className='space-y-4'>
-						<h2 className='text-2xl font-bold text-neon-purple'>3. A RUA É NOSSA CATEDRAL</h2>
+						<h2 className='text-2xl font-bold text-neon-purple'>3. NOSSO TERRITÓRIO</h2>
 						<p className='md:text-lg text-pretty'>
 							Pedalamos às terças, mas não nos limitaremos a um dia só. Nossas rotas são cartografias da resistência: a
 							cidade é grande demais para nos aprisionarmos em uma única região. Escutamos os bairros esquecidos, as
@@ -85,7 +85,7 @@ export default function ManifestoClandestino() {
 					<section className='space-y-4'>
 						<h2 className='text-2xl font-bold text-neon-purple'>7. AFIRMAÇÃO</h2>
 						<p className='md:text-lg text-pretty'>
-							<strong className='text-neon-green'>“Não somos um pedal, somos um levante.”</strong>
+							<strong className='text-neon-green'>“Não somos apenas um pedal, somos um levante.”</strong>
 							<br />
 							Não nos contentamos com ciclovias estreitas ou tolerância condescendente. Queremos ruas que respirem
 							liberdade, noites que pertençam aos corpos dissidentes, cidades onde a bicicleta não seja apenas um meio
