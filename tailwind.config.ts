@@ -13,6 +13,14 @@ export default {
 			heading: ['Protest Revolution', 'serif'],
 		},
 		extend: {
+			colors: {
+				'neon-green': '#39FF14',
+				'neon-purple': '#BC13FE',
+				'dark-gray': '#1a1a1a',
+			},
+			boxShadow: {
+				glitch: '0 0 15px #39FF14, 0 0 30px #BC13FE',
+			},
 			// background: 'var(--background)',
 			// foreground: 'var(--foreground)',
 		},
